@@ -2,12 +2,6 @@ const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Constraint = Matter.Constraint;
-var bg_img
-
-
-
-
-
 
 var engine, world;
 var ball,ground;
@@ -17,7 +11,6 @@ var rock_img;
 
 function preload(){
   rock_img=loadImage("rock.png");
-  gettime()
 }
 function setup() {
 
@@ -74,12 +67,7 @@ function setup() {
 }
 
 function draw() {
-if(bg_img)
-
-
-
-
-  background(bg_img)
+  background(56,44,44); 
  
   imageMode(CENTER);
   // write image() to display the polygon image 
@@ -142,29 +130,5 @@ function mouseDragged(){
   Matter.Body.setPosition(this.ball,{x:mouseX,y:mouseY});
 }
 function mouseReleased(){
-  slingShot.fly();}
-async function gettime(){
-  var respons = await fetch ("http://worldtimeapi.org/api/timezone/Asia/Kolkata")
-  var r=await respons.json()
-  var Date = r.datetime
-var hour=Date.slice(11,13)
-if (hour>6&&hour<18){
-  bg_img=loadImage("bg.png");}
-  
-  else{
-    bg_img=loadImage("bg2.jpg");
-  }
-
-
-
-
+  slingShot.fly();
 }
-
-
-
-
-
-
-
-
-
